@@ -3,8 +3,11 @@ import React, {useState} from 'react';
 import SubmitButton from '../../shared/submitbutton';
 import UploadImage from './uploadimage';
 import DescriptionField from './descriptionfield';
+import { useRouter } from 'next/navigation'
 
 export default function ServiceForm() {
+  const router = useRouter();
+
   const [description, setdescription] = useState("")
   const [acceptedFiles,setAcceptedFiles] = useState([])
   const [checkClear, setCheckClear] = useState(false)
@@ -29,6 +32,7 @@ export default function ServiceForm() {
     console.log("Files: ", acceptedFiles)
     setdescription("")
     setCheckClear(true)
+    // router.push('/tenant/newcase')
   };
 
   return(
