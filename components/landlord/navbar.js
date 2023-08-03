@@ -47,7 +47,7 @@ export default function Navbar() {
             <ListItem style={{display:'flex', justifyContent:'center'}} divider>
               <ListItemIcon><AccountBox sx= {{color:"#6C63FF",fontSize:"3.5rem", margin:"10px 0"}}/></ListItemIcon>   
             </ListItem>
-            <ListItemButton href="\landlord" divider>
+            <ListItemButton href="\landlord\manageunits" divider>
               <ListItemIcon><ApartmentOutlined sx= {{color:"#6C63FF",fontSize:"3rem"}}/></ListItemIcon>   
               <ListItemText primary="Manage Units"/>  
             </ListItemButton>
@@ -67,7 +67,7 @@ export default function Navbar() {
             <ListItem style={{display:'flex', justifyContent:'center'}} divider>
               <ListItemIcon><AccountBox sx= {{color:"#6C63FF",fontSize:"3.5rem", margin:"10px 0"}}/></ListItemIcon>   
             </ListItem>
-            <ListItemButton href="\landlord" divider>
+            <ListItemButton href="\landlord\manageunits" divider>
               <ListItemIcon><ApartmentOutlined sx= {{color:"#6C63FF",fontSize:"3rem"}}/></ListItemIcon>   
               <ListItemText primary="Manage Units"/>  
             </ListItemButton>
