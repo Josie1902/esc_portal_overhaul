@@ -1,6 +1,6 @@
 'use client'
 import { styled } from "@mui/material/styles";
-import { AccountBox, SpaceDashboardOutlined ,NoteAltOutlined,Menu } from "@mui/icons-material";
+import { AccountBox, SpaceDashboardOutlined ,NoteAltOutlined,Menu,Home } from "@mui/icons-material";
 
 import React from 'react';
 import {
@@ -47,6 +47,10 @@ export default function Navbar() {
             <ListItem style={{display:'flex', justifyContent:'center'}} divider>
               <ListItemIcon><AccountBox sx= {{color:"#6C63FF",fontSize:"3.5rem", margin:"10px 0"}}/></ListItemIcon>   
             </ListItem>
+            <ListItemButton href="\tenant" divider>
+              <ListItemIcon><Home sx= {{color:"#6C63FF",fontSize:"3rem"}}/></ListItemIcon>   
+              <ListItemText primary="Home"/>  
+            </ListItemButton>
             <ListItemButton href="\tenant\newcase" divider>
               <ListItemIcon><NoteAltOutlined sx= {{color:"#6C63FF",fontSize:"3rem"}}/></ListItemIcon>   
               <ListItemText primary="New Case"/>  
@@ -67,6 +71,10 @@ export default function Navbar() {
               <ListItem style={{display:'flex', justifyContent:'center'}} divider>
                 <ListItemIcon><AccountBox sx= {{color:"#6C63FF",fontSize:"3.5rem", margin:"10px 0"}}/></ListItemIcon>   
               </ListItem>
+              <ListItemButton href="\tenant" divider>
+              <ListItemIcon><Home sx= {{color:"#6C63FF",fontSize:"3rem"}}/></ListItemIcon>   
+              <ListItemText primary="Home"/>  
+            </ListItemButton>
               <ListItemButton href="\tenant\newcase" divider>
                 <ListItemIcon><NoteAltOutlined sx= {{color:"#6C63FF",fontSize:"3rem"}}/></ListItemIcon>   
                 <ListItemText primary="New Case"/>  
