@@ -6,14 +6,6 @@ import SubmitButton from '@/components/shared/submitbutton';
 export default function UnitForm() {
     const [formData, setFormData] = useState({
         address:'',
-        tenantUsername: '',
-        unitId: '',
-        monthlyRent: '',
-        commencementDate: '',
-        terminationDate: '',
-        expiryDate: '',
-        areaInSq:'',
-        tradeType:'',
       });
     
       const handleInputChange = (e) => {
