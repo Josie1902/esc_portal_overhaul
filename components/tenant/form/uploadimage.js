@@ -30,7 +30,7 @@ export default function UploadImage({ onFilesChange,checkClear, setCheckClear}) 
         'image/*': []
       },
       maxSize: 1024 * 1000,
-      maxFiles: 5,
+      maxFiles: 1,
       onDrop
     })
 
@@ -84,7 +84,7 @@ export default function UploadImage({ onFilesChange,checkClear, setCheckClear}) 
                     </div>
                 </div>
                 {/* Indicate max files */}
-                <p>* maximum 5 files</p>
+                <p>* maximum 1 file</p>
             </section>
             
             <section>
