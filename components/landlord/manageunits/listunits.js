@@ -7,7 +7,7 @@ import Link from 'next/link';
 // TO DO: Add in the data here
 // TO DO: If id is pressed, landlord can only view unit and lease infomration (user cannot interact with values)
 // TO DO: If pen icon is pressed, landlord can modify the information
-// TO DO: If bin icon is pressed, landlord deletes this unit (ought to prompt for confirmation)
+// TO DO: If bin icon is pressed, landlord deletes this unit (ought to prompt for confirmation to update data)
 
 export default function ListUnits() {
     const columns = [
