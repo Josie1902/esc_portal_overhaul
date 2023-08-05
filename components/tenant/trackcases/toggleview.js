@@ -6,8 +6,7 @@ import GroupByButton from "./dashboard/groupby";
 import ListView from "./listview";
 import Link from "next/link";
 
-// Listview: Hardcoded example
-
+// Listview: Hardcoded example (fetch all)
 const columns = [
   { field: 'id', headerName: 'ID', width: 130, 
   renderCell: (params) => (
@@ -50,176 +49,74 @@ const rows = [
 ];
 
 // Dashboard view: this is hardcoded, but it is meant to be grouped either by status or category
-
-// Example grouped by category
-// const data = [
-//     {
-//         category: "Lighting",
-//     boxes: [
-//       {
-//         id: "SR00001",
-//         name: "Jonathan Tan",
-//         timeupload: "Today 12:59pm",
-//         status: "Submitted by Tenant",
-//         email: "jontan@711.com",
-//         phonenumber: "91426543",
-//         leaseid: "SR122344",
-//       },
-//     ],
-//   },
-//   {
-//     category: "Electricity",
-//     boxes: [
-//       {
-//         id: "SR00002",
-//         name: "Jane Doe",
-//         timeupload: "Yesterday 3:45pm",
-//         status: "Submitted by Tenant",
-//         email: "janedoe@example.com",
-//         phonenumber: "91426543",
-//         leaseid: "SR122345",
-//       },
-//       {
-//         id: "SR00003",
-//         name: "John Smith",
-//         timeupload: "2 days ago",
-//         status: "Rejected by Tenant",
-//         email: "johnsmith@example.com",
-//         phonenumber: "91426543",
-//         leaseid: "SR122346",
-//       },
-//     ],
-//       },
-//       {
-//         category: "Horticulture",
-//     boxes: [
-//       {
-//         id: "SR00004",
-//         name: "Samantha Yo",
-//         timeupload: "Yesterday 3:45pm",
-//         status: "Completed by Landlord",
-//         email: "samyo@example.com",
-//         phonenumber: "91426543",
-//         leaseid: "SR1224845",
-//       },
-//       {
-//         id: "SR00005",
-//         name: "Hamilton Ee",
-//         timeupload: "2 days ago",
-//         status: "Accepted by Tenant",
-//         email: "hamee@example.com",
-//         phonenumber: "91426543",
-//         leaseid: "SR123296",
-//       },]
-//       }
-// ]
-
 // Example grouped by status
 const data = [
-    {
-      status: "Submitted by Tenant",
-      boxes: [
-        {
-          id: "SR00001",
-          name: "Jonathan Tan",
-          timeupload: "Today 12:59pm",
-          category: "Lighting",
-          email: "jontan@711.com",
-          phonenumber: "91426543",
-          leaseid: "SR122344",
-        },
-        {
-          id: "SR00002",
-          name: "Jane Doe",
-          timeupload: "Yesterday 3:45pm",
-          category: "Electricity",
-          email: "janedoe@example.com",
-          phonenumber: "91426543",
-          leaseid: "SR122345",
-        },
-        {
-            id: "SR00009",
-            name: "Jane Doe",
-            timeupload: "Yesterday 3:45pm",
-            category: "Aircon",
-            email: "janedoe@example.com",
-            phonenumber: "91426543",
-            leaseid: "SR122345",
-          },
-          {
-            id: "SR00006",
-            name: "Jane Doe",
-            timeupload: "Yesterday 3:45pm",
-            category: "Security",
-            email: "janedoe@example.com",
-            phonenumber: "91426543",
-            leaseid: "SR122345",
-          },
-          {
-            id: "SR00007",
-            name: "Jane Doe",
-            timeupload: "Yesterday 3:45pm",
-            category: "Others",
-            email: "janedoe@example.com",
-            phonenumber: "91426543",
-            leaseid: "SR122345",
-          },
-          {
-            id: "SR00008",
-            name: "Jane Doe",
-            timeupload: "Yesterday 3:45pm",
-            category: "Elevator",
-            email: "janedoe@example.com",
-            phonenumber: "91426543",
-            leaseid: "SR122345",
-          },
-      ],
-    },
-    {
-      status: "Rejected by Tenant",
-      boxes: [
-        {
-          id: "SR00003",
-          name: "John Smith",
-          timeupload: "2 days ago",
-          category: "Electricity",
-          email: "johnsmith@example.com",
-          phonenumber: "91426543",
-          leaseid: "SR122346",
-        },
-      ],
-    },
-    {
-      status: "Completed by Landlord",
-      boxes: [
-        {
-          id: "SR00004",
-          name: "Samantha Yo",
-          timeupload: "Yesterday 3:45pm",
-          category: "Horticulture",
-          email: "samyo@example.com",
-          phonenumber: "91426543",
-          leaseid: "SR1224845",
-        },
-      ],
-    },
-    {
-      status: "Accepted by Tenant",
-      boxes: [
-        {
-          id: "SR00005",
-          name: "Hamilton Ee",
-          timeupload: "2 days ago",
-          category: "Horticulture",
-          email: "hamee@example.com",
-          phonenumber: "91426543",
-          leaseid: "SR123296",
-        },
-      ],
-    },
-  ];
+  {
+    status: "Submitted by Tenant",
+    boxes: [
+      {
+        id: "SR00001",
+        leaseid: "SR122344",
+        category: "Lighting",
+        status: "Submitted by Tenant",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nunc a arcu vulputate facilisis.",
+        timeupload: "Today 12:59pm",
+      },
+      {
+        id: "SR00002",
+        leaseid: "SR122345",
+        category: "Electricity",
+        status: "Submitted by Tenant",
+        description: "Placeholder description for SR00002",
+        timeupload: "Yesterday 3:45pm",
+      },
+    ],
+  },
+  {
+    status: "Rejected by Tenant",
+    boxes: [
+      {
+        id: "SR00003",
+        leaseid: "SR122346",
+        category: "Electricity",
+        status: "Rejected by Tenant",
+        description: "Placeholder description for SR00003",
+        timeupload: "2 days ago",
+      },
+    ],
+  },
+  {
+    status: "Completed by Landlord",
+    boxes: [
+      {
+        id: "SR00004",
+        leaseid: "SR1224845",
+        category: "Horticulture",
+        status: "Completed by Landlord",
+        description: "Placeholder description for SR00004",
+        timeupload: "Yesterday 3:45pm",
+      },
+    ],
+  },
+  {
+    status: "Accepted by Tenant",
+    boxes: [
+      {
+        id: "SR00005",
+        leaseid: "SR123296",
+        category: "Horticulture",
+        status: "Accepted by Tenant",
+        description: "Placeholder description for SR00005",
+        timeupload: "2 days ago",
+      },
+    ],
+  },
+];
+
+
 
 export default function ToggleView() {
+    // Toggle between Dashboard and List View
     const [view, setView] = useState('dashboard');
 
     const handleViewChange = (event) => {
@@ -229,7 +126,10 @@ export default function ToggleView() {
         }
     }
 
+    // Handles Options
     const options = ['status','category'];
+
+    const anchorRef = React.useRef(null);
 
     const [selectedIndex, setSelectedIndex] = React.useState(1);
 
@@ -256,7 +156,7 @@ export default function ToggleView() {
         <section>
             <div className="flex flex-col gap-2 w-36 lg:flex-row lg:w-11/12 lg:justify-between">
                 <ToggleViewButton view ={view} onViewChange={handleViewChange} ></ToggleViewButton>
-                {view === 'dashboard' ? <GroupByButton options={options} selectedIndex={selectedIndex} handleMenuItemClick={handleMenuItemClick} open={open} handleToggle={handleToggle} handleClose={handleClose}/ > : null}
+                {view === 'dashboard' ? <GroupByButton options={options} selectedIndex={selectedIndex} handleMenuItemClick={handleMenuItemClick} open={open} handleToggle={handleToggle} handleClose={handleClose} anchorRef={anchorRef}/ > : null}
             </div>
             <div>
                 {view === 'dashboard' ? <DashboardView data={data} option={options[selectedIndex]}/> : <ListView columns={columns} rows={rows}/>}

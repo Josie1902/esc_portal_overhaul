@@ -1,7 +1,5 @@
 import Box from "./box"
 
-// name,timeupload,status,phonenumber,email,leaseid
-
 export default function ColumnWithBoxes({boxes,groupby,groupbyvalue}) {
     let tagKey;
 
@@ -19,7 +17,7 @@ export default function ColumnWithBoxes({boxes,groupby,groupbyvalue}) {
                     <div className="flex justify-center items-center bg-gray-400 w-8 h-4 rounded text-sm">{boxes.length} </div>
                 </div>
             {boxes.map((box) => (
-              <Box key={box.id} id={box.id} name={box.name} timeupload={box.timeupload} tag={box[tagKey]} phonenumber={box.phonenumber} email={box.email} leaseid={box.leaseid}/>
+              <Box key={box.id} id={box.id} timeupload={box.timeupload} tag={box[tagKey]} leaseid={box.leaseid} description={box.description}/>
             ))}
             </div>
         </section>
