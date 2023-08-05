@@ -142,7 +142,7 @@ const Accordion = styled((props) => (
 
   
     return (
-      <div>
+      <div className='mt-6'>
         {steps.map((step, index) => (
           <Accordion
             key={index}
