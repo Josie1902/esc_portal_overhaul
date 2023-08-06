@@ -8,7 +8,7 @@ export default function AcceptQuotation({isCurrentAction,
   handleFeedbackChange,
   isSubmitted,
   handleFeedbackSubmit,}) {
-    isCurrentAction = true
+    
     return(
         <section>
           {isCurrentAction === true ? (
@@ -35,7 +35,6 @@ export default function AcceptQuotation({isCurrentAction,
                   readOnly: isSubmitted,
                 }}
               />
-              {/* <SubmitButton onClick={handleFeedbackSubmit} disabled={isSubmitted}></SubmitButton> */}
               {isSubmitted === true ? null : <SubmitButton onClick={handleFeedbackSubmit} />}
             </form>
           ) : null}

@@ -60,12 +60,6 @@ const Accordion = styled((props) => (
         setExpanded(isExpanded ? panel : false);
     };
 
-    // Form logic to see whether it is my current action
-    const [isCurrentAction,setCurrentAction] = React.useState(false);
-    const handleCurrentAction = () => {
-        setSubmitted(true);
-    };
-
     // Note: If there is no data in view quotation or accept quotation, the accordian summary would remain empty
 
     // --- SHOULD ONLY DEAL WITH ONE SERVICE REQUEST ID ---
@@ -93,10 +87,18 @@ const Accordion = styled((props) => (
     const quotationAcceptedData = {
         time: '25/12/2022  3:52:00 PM',
       };
+
+    // Form logic to see whether it is my current action
+    const [isCurrentAction,setCurrentAction] = React.useState(false)
+    const handleCurrentAction = () => {
+        setCurrentAction((prevIsCurrentAction) => !prevIsCurrentAction);
+    };
     
     // Handling Reject,Accept button in view quotaion
     const handleAccept = () => {
-        console.lof("accept quotation") // should save the time when quotation is accepted
+        console.log("accept quotation") // should save the time when quotation is accepted
+        handleCurrentAction()
+
     }
     const handleReject = () => {
         console.log("reject quotation")
@@ -125,13 +127,13 @@ const Accordion = styled((props) => (
     const steps = [
         {
           label: <div className="font-bold text-lg">REQUEST CREATED <div className='font-light text-sm'>{requestData.time}</div></div>,
-          icon: <ServiceRequestIcon isCurrentAction={isCurrentAction}/>,
+          icon: <ServiceRequestIcon isCurrentAction={false}/>,
           content: <ServiceRequest tenantname={requestData.tenantname} email={requestData.email} phonenumber={requestData.phonenumber} leaseid={requestData.leaseid} description={requestData.description} fileName={requestData.filepath}/>,
         },
         {
           label: <div className="font-bold text-lg">VIEW QUOTATION <div className='font-light text-sm'>{quotationData.time}</div></div>,
-          icon: <RequestQuoteIcon isCurrentAction={isCurrentAction}/>, 
-          content: <ViewQuotation amount={quotationData.amount} fileName={quotationData.filepath} isCurrentAction={isCurrentAction} handleAccept={handleAccept} handleReject={handleReject}/>, // will show accept reject button if isCurrentAction === true
+          icon: <RequestQuoteIcon isCurrentAction={!isCurrentAction}/>, 
+          content: <ViewQuotation amount={quotationData.amount} fileName={quotationData.filepath} isCurrentAction={!isCurrentAction} handleAccept={handleAccept} handleReject={handleReject}/>, // will show accept reject button if isCurrentAction === true
         },
         {
           label: <div className="font-bold text-lg">ACCEPTED QUOTATION <div className='font-light text-sm'>{quotationAcceptedData.time}</div></div>,
